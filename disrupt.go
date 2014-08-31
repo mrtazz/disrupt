@@ -33,7 +33,7 @@ func init() {
 // Returns an error object if any notifier failed
 func NotifyAll(title string, message string) error {
 
-  var err error
+	var err error
 
 	for _, notifier := range Notifiers {
 		err = notifier.Notify(title, message)
