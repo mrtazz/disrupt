@@ -2,7 +2,6 @@
 package disrupt
 
 import (
-	"errors"
 	"github.com/mrtazz/disrupt/helpers"
 	"github.com/mrtazz/disrupt/pushover"
 	"github.com/mrtazz/disrupt/twilio"
@@ -34,10 +33,10 @@ func init() {
 // Returns an error object if any notifier failed
 func NotifyAll(title string, message string) error {
 
-	err := errors.New("failed")
+  var err error
 
 	for _, notifier := range Notifiers {
-		notifier.Notify(title, message)
+		err = notifier.Notify(title, message)
 	}
 
 	return err
