@@ -1,4 +1,4 @@
-# disrupt
+# disrupt [![Build Status](https://travis-ci.org/mrtazz/disrupt?branch=master)](https://travis-ci.org/mrtazz/disrupt)
 
 ## Overview
 Library to enable notifications via multiple providers. Because nothing is
