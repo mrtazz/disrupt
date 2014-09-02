@@ -59,3 +59,11 @@ func RegisterTwilioNotifier(sid string, token string, from string, to string, ma
 	Notifiers = append(Notifiers, t)
 	return nil
 }
+
+// this function let's you register any notifier that satisfies the interface
+func RegisterGenericNotifier(notifier Notifier) error {
+	NotifierMutex.Lock()
+	defer NotifierMutex.Unlock()
+	Notifiers = append(Notifiers, notifier)
+	return nil
+}
